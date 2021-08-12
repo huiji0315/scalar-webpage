@@ -11,6 +11,7 @@ import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, PostFeed, SiteHeader, SiteNavMain } from '../styles/shared';
 import { PageContext } from '../templates/post';
+import { Footer } from '../components/Footer';
 
 interface NotFoundTemplateProps {
   data: {
@@ -41,7 +42,7 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
             <section style={{ textAlign: 'center' }}>
               <ErrorCode>404</ErrorCode>
               <ErrorDescription>Page not found</ErrorDescription>
-              <Link css={ErrorLink} to="">
+              <Link css={ErrorLink} to="/">
                 Go to the front page →
               </Link>
             </section>
@@ -53,6 +54,7 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
             </div>
           </div>
         </main>
+        <Footer/>
       </Wrapper>
     </IndexLayout>
   );
@@ -60,13 +62,11 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 3, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(limit: 3) {
       edges {
         node {
           frontmatter {
             title
-            date
-            tags
             image {
               childImageSharp {
                 fluid(maxWidth: 3720) {
@@ -74,25 +74,9 @@ export const pageQuery = graphql`
                 }
               }
             }
-            author {
-              id
-              bio
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-            }
           }
           excerpt
           fields {
-            readingTime {
-              text
-            }
             layout
             slug
           }

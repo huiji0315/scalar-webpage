@@ -12,7 +12,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout, primaryTag } = node.frontmatter;
+      const { permalink, layout } = node.frontmatter;
       const { relativePath } = getNode(node.parent);
 
       let slug = permalink;
@@ -34,12 +34,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         name: 'layout',
         value: layout || '',
       });
-
-      createNodeField({
-        node,
-        name: 'primaryTag',
-        value: primaryTag || '',
-      });
     }
   }
 };
@@ -51,17 +45,12 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       allMarkdownRemark(
         limit: 2000
-        sort: { fields: [frontmatter___date], order: ASC }
-        filter: { frontmatter: { draft: { ne: true } } }
       ) {
         edges {
           node {
             excerpt
             frontmatter {
               title
-              tags
-              date
-              draft
               excerpt
               image {
                 childImageSharp {
@@ -74,38 +63,11 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
-              author {
-                id
-                bio
-                avatar {
-                  children {
-                    ... on ImageSharp {
-                      fluid(quality: 100) {
-                        aspectRatio
-                        base64
-                        sizes
-                        src
-                        srcSet
-                      }
-                    }
-                  }
-                }
-              }
             }
             fields {
-              readingTime {
-                text
-              }
               layout
               slug
             }
-          }
-        }
-      }
-      allAuthorYaml {
-        edges {
-          node {
-            id
           }
         }
       }
@@ -158,40 +120,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug,
-        prev,
-        next,
-        primaryTag: node.frontmatter.tags ? node.frontmatter.tags[0] : '',
-      },
-    });
-  });
-
-  // Create tag pages
-  const tagTemplate = path.resolve('./src/templates/tags.tsx');
-  const tags = _.uniq(
-    _.flatten(
-      result.data.allMarkdownRemark.edges.map(edge => {
-        return _.castArray(_.get(edge, 'node.frontmatter.tags', []));
-      }),
-    ),
-  );
-  tags.forEach(tag => {
-    createPage({
-      path: `/tags/${_.kebabCase(tag)}/`,
-      component: tagTemplate,
-      context: {
-        tag,
-      },
-    });
-  });
-
-  // Create author pages
-  const authorTemplate = path.resolve('./src/templates/author.tsx');
-  result.data.allAuthorYaml.edges.forEach(edge => {
-    createPage({
-      path: `/author/${_.kebabCase(edge.node.id)}/`,
-      component: authorTemplate,
-      context: {
-        author: edge.node.id,
       },
     });
   });

@@ -6,11 +6,6 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-import { SocialLink, SocialLinkFb } from '../../styles/shared';
-import config from '../../website-config';
-import { Facebook } from '../icons/facebook';
-import { Twitter } from '../icons/twitter';
-import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 
 interface SiteNavProps {
@@ -24,17 +19,10 @@ interface SiteNavState {
 }
 
 class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
-  subscribe = React.createRef<SubscribeModal>();
   titleRef = React.createRef<HTMLSpanElement>();
   lastScrollY = 0;
   ticking = false;
   state = { showTitle: false };
-
-  openModal = () => {
-    if (this.subscribe.current) {
-      this.subscribe.current.open();
-    }
-  };
 
   componentDidMount(): void {
     this.lastScrollY = window.scrollY;
@@ -82,62 +70,32 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   render() {
     const { isHome = false, isPost = false, post = {} } = this.props;
     return (
-      <>
-        {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
-        <nav css={SiteNavStyles}>
-          <SiteNavLeft className="site-nav-left">
-            {!isHome && <SiteNavLogo />}
-            <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
-              <ul css={NavStyles} role="menu">
-                <li role="menuitem">
-                  <Link to="/" activeClassName="nav-current">Home</Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/about" activeClassName="nav-current">About</Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/tags/getting-started/" activeClassName="nav-current">Getting Started</Link>
-                </li>
-              </ul>
-              {isPost && (
-                <NavPostTitle ref={this.titleRef} className="nav-post-title">
-                  {post.title}
-                </NavPostTitle>
-              )}
-            </SiteNavContent>
-          </SiteNavLeft>
-          <SiteNavRight>
-            <SocialLinks>
-              {config.facebook && (
-                <a
-                  className="social-link-fb"
-                  css={[SocialLink, SocialLinkFb]}
-                  href={config.facebook}
-                  target="_blank"
-                  title="Facebook"
-                  rel="noopener noreferrer"
-                >
-                  <Facebook />
-                </a>
-              )}
-              {config.twitter && (
-                <a
-                  css={SocialLink}
-                  href={config.twitter}
-                  title="Twitter"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter />
-                </a>
-              )}
-            </SocialLinks>
-            {config.showSubscribe && (
-              <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
+      <nav css={SiteNavStyles}>
+        <SiteNavLeft>
+          {!isHome && <SiteNavLogo />}
+          <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
+            <ul css={NavStyles} role="menu">
+              <li role="menuitem">
+                <Link to="/" activeClassName="nav-current">Home</Link>
+              </li>
+              <li role="menuitem">
+                <Link to="/about" activeClassName="nav-current">About</Link>
+              </li>
+              <li role="menuitem">
+                <Link to="/members" activeClassName="nav-current">Members</Link>
+              </li>
+              <li role="menuitem">
+                <Link to="/publications" activeClassName="nav-current">Publications</Link>
+              </li>
+            </ul>
+            {isPost && (
+              <NavPostTitle ref={this.titleRef} className="nav-post-title">
+                {post.title}
+              </NavPostTitle>
             )}
-          </SiteNavRight>
-        </nav>
-      </>
+          </SiteNavContent>
+        </SiteNavLeft>
+      </nav>
     );
   }
 }
@@ -165,7 +123,7 @@ const SiteNavStyles = css`
   align-items: flex-start;
   overflow-y: hidden;
   height: 64px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 `;
 
 const SiteNavLeft = styled.div`
@@ -256,29 +214,6 @@ const SiteNavRight = styled.div`
 
   @media (max-width: 700px) {
     display: none;
-  }
-`;
-
-const SocialLinks = styled.div`
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-`;
-
-const SubscribeButton = styled.a`
-  display: block;
-  padding: 4px 10px;
-  margin: 0 0 0 10px;
-  border: #fff 1px solid;
-  color: #fff;
-  line-height: 1em;
-  border-radius: 10px;
-  opacity: 0.8;
-
-  :hover {
-    text-decoration: none;
-    opacity: 1;
-    cursor: pointer;
   }
 `;
 

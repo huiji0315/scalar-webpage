@@ -20,25 +20,19 @@ export const Footer: React.FC = () => {
             </Link>
           )}
         </section>
-        <SiteFooterNav>
-          <Link to="/">Latest Posts</Link>
-          {config.facebook && (
-            <a href={config.facebook} target="_blank" rel="noopener noreferrer">
-              Facebook
+        <section className="information">
+          <SiteFooterNav>
+            <a href="http://www.hongik.ac.kr/" target="_blank" rel="noopener noreferrer">
+              Hongik Univ.
             </a>
-          )}
-          {config.twitter && (
-            <a href={config.twitter} target="_blank" rel="noopener noreferrer">
-              Twitter
+            <a href="http://www.ce.hongik.ac.kr/dept/" target="_blank" rel="noopener noreferrer">
+              Computer Engineering Dept.
             </a>
-          )}
-
-          <a href="https://github.com/scttcper/gatsby-casper" target="_blank" rel="noopener noreferrer">
-            Casper
-          </a>
-
-          <a href="/rss.xml">RSS</a>
-        </SiteFooterNav>
+          </SiteFooterNav>
+          <SiteFooterContact>
+            {config.contact} | {config.email}
+          </SiteFooterContact>
+        </section>
       </div>
     </footer>
   );
@@ -47,7 +41,7 @@ export const Footer: React.FC = () => {
 const SiteFooter = css`
   position: relative;
   padding-top: 20px;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
   color: #fff;
   background: ${setLightness('0.0015', colors.darkgrey)};
 `;
@@ -58,7 +52,7 @@ const SiteFooterContent = css`
   justify-content: space-between;
   align-items: center;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   a {
     color: rgba(255, 255, 255, 0.7);
   }
@@ -101,3 +95,12 @@ const SiteFooterNav = styled.nav`
   }
 `;
 
+const SiteFooterContact = styled.nav`
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+
+  @media (max-width: 650px) {
+    justify-content: center;
+  }
+`;

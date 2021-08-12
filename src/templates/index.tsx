@@ -7,7 +7,6 @@ import { css } from '@emotion/react';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
-import Pagination from '../components/Pagination';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
@@ -27,10 +26,6 @@ import config from '../website-config';
 import { PageContext } from './post';
 
 export interface IndexProps {
-  pageContext: {
-    currentPage: number;
-    numPages: number;
-  };
   data: {
     logo: {
       childImageSharp: {
@@ -68,24 +63,6 @@ const IndexPage: React.FC<IndexProps> = props => {
           property="og:image"
           content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
         />
-        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
-        {config.googleSiteVerification && (
-          <meta name="google-site-verification" content={config.googleSiteVerification} />
-        )}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={config.title} />
-        <meta name="twitter:description" content={config.description} />
-        <meta name="twitter:url" content={config.siteUrl} />
-        <meta
-          name="twitter:image"
-          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
-        />
-        {config.twitter && (
-          <meta
-            name="twitter:site"
-            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
-          />
-        )}
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
       </Helmet>
@@ -101,7 +78,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteNav isHome />
             <SiteHeaderContent className="site-header-content">
               <SiteTitle className="site-title">
-                {props.data.logo ? (
+                {/* {props.data.logo ? (
                   <img
                     style={{ maxHeight: '55px' }}
                     src={props.data.logo.childImageSharp.fixed.src}
@@ -109,7 +86,8 @@ const IndexPage: React.FC<IndexProps> = props => {
                   />
                 ) : (
                   config.title
-                )}
+                )} */}
+                { config.title }
               </SiteTitle>
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
@@ -119,24 +97,14 @@ const IndexPage: React.FC<IndexProps> = props => {
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
               {props.data.allMarkdownRemark.edges.map((post, index) => {
-                // filter out drafts in production
                 return (
-                  (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                  )
+                  <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
                 );
               })}
             </div>
           </div>
         </main>
         {props.children}
-        {props.pageContext.numPages > 1 && (
-          <Pagination
-            currentPage={props.pageContext.currentPage}
-            numPages={props.pageContext.numPages}
-          />
-        )}
         <Footer />
       </Wrapper>
     </IndexLayout>
@@ -144,8 +112,8 @@ const IndexPage: React.FC<IndexProps> = props => {
 };
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+  query webPageQuery($skip: Int!, $limit: Int!) {
+    logo: file(relativePath: { eq: "img/hongik_logo.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -164,8 +132,6 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
       limit: $limit
       skip: $skip
     ) {
@@ -173,9 +139,6 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            date
-            tags
-            draft
             excerpt
             image {
               childImageSharp {
@@ -184,25 +147,9 @@ export const pageQuery = graphql`
                 }
               }
             }
-            author {
-              id
-              bio
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fluid(quality: 100, srcSetBreakpoints: [40, 80, 120]) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-            }
           }
           excerpt
           fields {
-            readingTime {
-              text
-            }
             layout
             slug
           }

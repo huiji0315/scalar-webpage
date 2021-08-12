@@ -15,54 +15,22 @@ export interface WebsiteConfig {
   /**
    * full url, no username
    */
-  facebook?: string;
-  /**
-   * full url, no username
-   */
-  twitter?: string;
-  /**
-   * hide or show all email subscribe boxes
-   */
-  showSubscribe: boolean;
-  /**
-   * create a list on mailchimp and then create an embeddable signup form. this is the form action
-   */
-  mailchimpAction?: string;
-  /**
-   * this is the hidden input field name
-   */
-  mailchimpName?: string;
-  /**
-   * name and id of the mailchimp email field
-   */
-  mailchimpEmailFieldName?: string;
-  /**
-  /**
-   * Meta tag for Google Webmaster Tools
-   */
-  googleSiteVerification?: string;
-  /**
-  /**
-   * Appears alongside the footer, after the credits
-   */
+
   footer?: string;
+  contact: string;
+  email: string;
 }
 
 const config: WebsiteConfig = {
-  title: 'Ghost',
-  description: 'The professional publishing platform',
+  title: 'SCALAR',
+  description: 'SCALable ARchitecture Lab.',
   coverImage: 'img/blog-cover.png',
-  logo: 'img/ghost-logo.png',
+  logo: 'img/hongik_logo.jpg',
   lang: 'en',
-  siteUrl: 'https://gatsby-casper.netlify.com',
-  facebook: 'https://www.facebook.com/ghost',
-  twitter: 'https://twitter.com/tryghost',
-  showSubscribe: true,
-  mailchimpAction: 'https://twitter.us19.list-manage.com/subscribe/post?u=a89b6987ac248c81b0b7f3a0f&amp;id=7d777b7d75',
-  mailchimpName: 'b_a89b6987ac248c81b0b7f3a0f_7d777b7d75',
-  mailchimpEmailFieldName: 'MERGE0',
-  googleSiteVerification: 'GoogleCode',
-  footer: 'is based on Gatsby Casper',
+  siteUrl: '',
+  footer: 'is based on Hongik Univ.',
+  contact: 'Contact : (02)320-3012',
+  email: 'konwoo@hongik.ac.kr',
 };
 
 export default config;

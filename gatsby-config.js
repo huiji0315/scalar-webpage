@@ -7,9 +7,6 @@ module.exports = {
     description: 'A port of the casper blog built for gatsby',
     siteUrl: 'https://gatsby-casper.netlify.com', // full path to blog - no ending slash
   },
-  mapping: {
-    'MarkdownRemark.frontmatter.author': 'AuthorYaml',
-  },
   plugins: [
     'gatsby-plugin-sitemap',
     {
@@ -39,7 +36,6 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
-          'gatsby-remark-reading-time',
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -84,7 +80,6 @@ module.exports = {
                 return {
                   ...edge.node.frontmatter,
                   description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
                   url: `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`,
                   guid: `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
@@ -93,10 +88,7 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
-                  filter: { frontmatter: { draft: { ne: true } } }
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
+                allMarkdownRemark {
                   edges {
                     node {
                       excerpt
@@ -104,7 +96,6 @@ module.exports = {
                       fields { slug }
                       frontmatter {
                         title
-                        date
                       }
                     }
                   }
@@ -112,7 +103,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'Ghost\'s Blog',
+            title: 'SCALAR Webpage',
             match: '^/blog/',
           },
         ],
@@ -122,24 +113,6 @@ module.exports = {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-XXXX-Y',
-        // Puts tracking script in the head instead of the body
-        head: true,
-        // IP anonymization for GDPR compliance
-        anonymize: true,
-        // Disable analytics for users with `Do Not Track` enabled
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ['/preview/**'],
-        // Specifies what percentage of users should be tracked
-        sampleRate: 100,
-        // Determines how often site speed tracking beacons will be sent
-        siteSpeedSampleRate: 10,
       },
     },
   ],
