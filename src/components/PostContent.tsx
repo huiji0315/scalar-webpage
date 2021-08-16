@@ -625,12 +625,6 @@ export const PostFullContent = styled.section`
     color: rgb(255, 203, 139);
   }
 
-  .token.tag,
-  .token.operator,
-  .token.keyword {
-    color: #ffa7c4;
-  }
-
   .token.boolean {
     color: rgb(255, 88, 116);
   }

@@ -4,10 +4,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/react';
+import Divider from '@material-ui/core/Divider';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
+import Field, { FieldType } from '../components/Field';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
@@ -38,9 +40,7 @@ export interface IndexProps {
       };
     };
     allMarkdownRemark: {
-      edges: Array<{
-        node: PageContext;
-      }>;
+      edges: FieldType[];
     };
   };
 }
@@ -96,11 +96,14 @@ const IndexPage: React.FC<IndexProps> = props => {
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) => {
+              {/* {props.data.allMarkdownRemark.edges.map((item, index) => {
                 return (
-                  <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
+                  // <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
+                  <Field key={item.node.fields.slug || index} items={item.node} />
                 );
-              })}
+              })} */}
+              <Divider/>
+              <Field fields={props.data.allMarkdownRemark.edges}/>
             </div>
           </div>
         </main>

@@ -137,7 +137,7 @@ export const SiteHeaderStyles = css`
   }
 `;
 
-// tag and author post lists
+// author post lists
 export const SiteArchiveHeader = css`
   .site-header-content {
     position: relative;

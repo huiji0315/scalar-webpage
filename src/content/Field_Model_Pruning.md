@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: field
 title: 'Model Pruning & Quantanization'
 image: img/coding.jpg
 excerpt: We study about Model Pruning & Quantaization. Description...

@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: field
 title: 'AI Architecture for Hardware'
-image: img/laptop.jpg
+image: img/writing.jpg
 excerpt: We study about AI Architecture for Hardware. Description...
 ---
 

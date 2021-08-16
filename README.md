@@ -17,8 +17,10 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
   - [ ] members
   - [ ] publications
 - [ ] templates
+  - [x] field
   - [ ] index
   - [ ] post
+- [ ] content (image, md file)
 - [ ] website-config
 - [ ] polish ✨
   - [ ] meta tags

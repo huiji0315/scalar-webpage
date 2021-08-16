@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: field
 title: 'Hardware Security'
 image: img/RAM.jpg
 excerpt: We study about Rowhammering. Description...
