@@ -10,6 +10,7 @@ import Img, { FluidObject } from 'gatsby-image';
 import Field, { FieldType } from './Field';
 import { colors } from '../styles/colors';
 import { PostFeed } from '../styles/shared';
+import { RiArrowRightSLine } from 'react-icons/ri';
 
 interface FieldProps{
   fields: FieldType[];
@@ -44,7 +45,7 @@ const Introduction: React.FC<FieldProps> = ({ fields }) => {
         css={[PostCardStyles, PostCardLarge]}
       >
         {field[0].node.frontmatter.image && (
-          <Link className="post-card-image-link" css={PostCardImageLink} to={field[0].node.fields.slug}>
+          <Link className="post-card-image-link" css={PostCardImageLink} to="/about">
             <PostCardImage className="post-card-image">
               {field[0].node.frontmatter?.image?.childImageSharp?.fluid && (
                 <Img
@@ -64,6 +65,12 @@ const Introduction: React.FC<FieldProps> = ({ fields }) => {
             <PostCardExcerpt className="post-card-excerpt">
               <p>{field[0].node.frontmatter.excerpt}</p>
             </PostCardExcerpt>
+          </Link>
+          <Link
+            to="/about"
+            className="post-card-button"
+          >
+            About<RiArrowRightSLine />
           </Link>
         </PostCardContent>
       </article>
@@ -132,6 +139,10 @@ const PostCardLarge = css`
       margin-bottom: 1.5em;
       font-size: 1.8rem;
       line-height: 1.5em;
+    }
+
+    .post-card-button {
+      padding: 0 0 0 40px;
     }
   }
 `;
