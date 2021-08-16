@@ -11,6 +11,8 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
   - [x] Footer
   - [ ] PostCard
   - [ ] PostContent
+  - [x] Field
+  - [x] Introduction
 - [ ] pages
   - [x] 404
   - [ ] about
@@ -18,6 +20,7 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
   - [ ] publications
 - [ ] templates
   - [x] field
+  - [x] home
   - [ ] index
   - [ ] post
 - [ ] content (image, md file)

@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -38,13 +38,6 @@ export interface IndexProps {
     header: {
       childImageSharp: {
         fixed: FixedObject;
-      };
-    };
-    home: {
-      allMarkdownRemark: {
-        edges: {
-          node: PageContext;
-        };
       };
     };
     allMarkdownRemark: {

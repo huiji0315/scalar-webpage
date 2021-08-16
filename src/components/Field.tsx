@@ -30,17 +30,21 @@ interface FieldProps{
 export const BigTitle = styled.span`
   display: flex;
   width: 100%;
-  height: 25%;
   font-size: 3rem;
-  font-weight: 700;
-  margin: 3rem 5rem 1rem;
+  font-weight: 500;
+  margin: 3rem 4rem 1rem;
+  padding: 1rem;
+
+  @media (max-width: 500px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
-  padding: 0 4rem;
+  padding: 0 2rem;
   margin: 4rem 1rem;
   text-align: center;
 
