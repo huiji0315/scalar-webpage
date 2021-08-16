@@ -1,5 +1,6 @@
 ---
 layout: post
+index: -1
 title: A Full and Comprehensive Style Test
 image: img/testimg-cover.jpg
 ---

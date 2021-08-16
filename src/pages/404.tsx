@@ -12,14 +12,12 @@ import { colors } from '../styles/colors';
 import { inner, outer, PostFeed, SiteHeader, SiteNavMain } from '../styles/shared';
 import { PageContext } from '../templates/post';
 import { Footer } from '../components/Footer';
+import Field, { FieldType } from '../components/Field';
 
 interface NotFoundTemplateProps {
   data: {
     allMarkdownRemark: {
-      totalCount: number;
-      edges: Array<{
-        node: PageContext;
-      }>;
+      edges: FieldType[];
     };
   };
 }
@@ -39,18 +37,15 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
         </header>
         <main id="site-main" css={[outer, ErrorContent]} className="error-content">
           <div css={[inner]}>
-            <section style={{ textAlign: 'center' }}>
+            <section style={{ textAlign: 'center', marginBottom: '80px' }}>
               <ErrorCode>404</ErrorCode>
               <ErrorDescription>Page not found</ErrorDescription>
               <Link css={ErrorLink} to="/">
                 Go to the front page →
               </Link>
             </section>
-
-            <div css={PostFeed} className="post-feed">
-              {edges.map(({ node }) => (
-                <PostCard key={node.fields.slug} post={node} />
-              ))}
+            <div>
+              <Field fields={edges}/>
             </div>
           </div>
         </main>
@@ -62,11 +57,13 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 3) {
+    allMarkdownRemark {
       edges {
         node {
           frontmatter {
             title
+            index
+            excerpt
             image {
               childImageSharp {
                 fluid(maxWidth: 3720) {
@@ -87,7 +84,7 @@ export const pageQuery = graphql`
 `;
 
 const ErrorContent = css`
-  padding: 14vw 4vw 6vw;
+  padding: 10vw 4vw 6vw;
 
   @media (max-width: 800px) {
     padding-top: 24vw;

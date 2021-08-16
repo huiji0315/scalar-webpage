@@ -12,7 +12,7 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
   - [ ] PostCard
   - [ ] PostContent
 - [ ] pages
-  - [ ] 404
+  - [x] 404
   - [ ] about
   - [ ] members
   - [ ] publications

@@ -45,7 +45,6 @@ interface PageTemplateProps {
 export interface PageContext {
   excerpt: string;
   fields: {
-    layout: string;
     slug: string;
   };
   frontmatter: {
@@ -56,7 +55,6 @@ export interface PageContext {
     };
     excerpt: string;
     title: string;
-    index: number;
   };
 }
 

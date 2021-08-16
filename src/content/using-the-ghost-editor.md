@@ -1,5 +1,6 @@
 ---
 layout: post
+index: -1
 title: 'Using The Ghost Editor'
 image: img/writing.jpg
 ---

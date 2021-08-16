@@ -26,6 +26,7 @@ import {
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext } from './post';
+import Introduction from '../components/Introduction';
 
 export interface IndexProps {
   data: {
@@ -39,6 +40,13 @@ export interface IndexProps {
         fixed: FixedObject;
       };
     };
+    home: {
+      allMarkdownRemark: {
+        edges: {
+          node: PageContext;
+        };
+      };
+    };
     allMarkdownRemark: {
       edges: FieldType[];
     };
@@ -47,6 +55,8 @@ export interface IndexProps {
 
 const IndexPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
+  // const post = props.data.home.allMarkdownRemark.edges.node;
+  const fields = props.data.allMarkdownRemark.edges;
 
   return (
     <IndexLayout css={HomePosts}>
@@ -95,15 +105,18 @@ const IndexPage: React.FC<IndexProps> = props => {
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
-            <div css={[PostFeed]}>
+            {/* </div>/<div css={[PostFeed]}> */}
+            <div>
               {/* {props.data.allMarkdownRemark.edges.map((item, index) => {
                 return (
                   // <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
                   <Field key={item.node.fields.slug || index} items={item.node} />
                 );
               })} */}
+              {/* <PostCard post={props.data.home.allMarkdownRemark.edges.node} large={props.data.home.allMarkdownRemark.edges.node.frontmatter.index === 0}/> */}
+              <Introduction fields={props.data.allMarkdownRemark.edges}/>
               <Divider/>
-              <Field fields={props.data.allMarkdownRemark.edges}/>
+              <Field fields={fields}/>
             </div>
           </div>
         </main>
@@ -137,11 +150,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: $limit
       skip: $skip
+      sort: { fields: frontmatter___index, order: ASC }
     ) {
       edges {
         node {
           frontmatter {
             title
+            index
             excerpt
             image {
               childImageSharp {

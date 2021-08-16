@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 // import PropTypes from 'prop-types';
-import Item from '../components/Item';
+import Item from './Item';
 import styled from '@emotion/styled';
 import Img, { FluidObject } from 'gatsby-image';
 
@@ -8,6 +8,7 @@ export interface FieldType {
   node: {
     frontmatter: {
       title: string;
+      index: number;
       excerpt: string;
       image: {
         childImageSharp: {
@@ -26,16 +27,13 @@ interface FieldProps{
   fields: FieldType[];
 }
 
-export const Title = styled.span`
-  display: block;
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 2rem 2rem 1rem;
-`;
-
-export const Copy = styled.p`
-  color: #757575;
-  margin: 0 2rem 2rem;
+export const BigTitle = styled.span`
+  display: flex;
+  width: 100%;
+  height: 25%;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 3rem 5rem 1rem;
 `;
 
 export const Container = styled.div`
@@ -43,7 +41,14 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
   padding: 0 4rem;
-  margin: 2rem 0;
+  margin: 4rem 1rem;
+  text-align: center;
+
+  @media (max-width: 900px) {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+  }
 `;
 
 const Field: React.FC<FieldProps> = ({ fields }) => {
@@ -60,18 +65,21 @@ const Field: React.FC<FieldProps> = ({ fields }) => {
   );
 
   return (
-    <Container>
-      {field.map(
-        ({
-          node: {
-            frontmatter: { title, image, excerpt },
-            fields: { slug },
-          },
-        }: FieldType) => (
-          <Item key={slug} title={title} image={image} excerpt={excerpt} />
-        ),
-      )}
-    </Container>
+    <>
+      <BigTitle>Research Topics</BigTitle>
+      <Container>
+        {field.map(
+          ({
+            node: {
+              frontmatter: { title, image, excerpt },
+              fields: { slug },
+            },
+          }: FieldType) => (
+            <Item key={slug} title={title} image={image} excerpt={excerpt} />
+          ),
+        )}
+      </Container>
+    </>
   );
 };
 
