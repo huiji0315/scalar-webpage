@@ -84,14 +84,18 @@ export const pageQuery = graphql`
 `;
 
 const ErrorContent = css`
-  padding: 10vw 4vw 6vw;
+  padding: 12vw 4vw 6vw;
+
+  @media (max-width: 1000px) {
+    padding-top: 14vw;
+  }
 
   @media (max-width: 800px) {
-    padding-top: 24vw;
+    padding-top: 18vw;
   }
 
   @media (max-width: 500px) {
-    padding-top: 28vw;
+    padding-top: 25vw;
   }
 
   @media (min-width: 940px) {
