@@ -15,13 +15,13 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
   - [x] Introduction
 - [ ] pages
   - [x] 404
-  - [ ] about
+  - [x] about
   - [ ] members
   - [ ] publications
 - [ ] templates
   - [x] field
   - [x] home
-  - [ ] index
+  - [x] index
   - [ ] post
 - [ ] content (image, md file)
 - [ ] website-config

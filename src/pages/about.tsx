@@ -57,43 +57,45 @@ const About: React.FC = () => (
             <PostFullContent className="post-full-content">
               <div className="post-content">
                 <h5>
-                  A starter template for Gatsby <br /> GitHub: <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a>
+                  SCALable ARchitecture Lab.
                 </h5>
+                <h3>
+                  Introduction
+                </h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo finibus leo,
-                  non tempus magna vehicula ac. Maecenas mollis ante finibus pharetra imperdiet.
-                  Maecenas in aliquam purus. Nam et massa a nulla fermentum dapibus sit amet in
-                  neque. Ut ipsum ipsum, rhoncus a sodales pellentesque, interdum a elit. Nullam
-                  aliquam tellus nibh, eget laoreet dui aliquet non. Vestibulum malesuada ante at
-                  diam tempus, ac interdum risus scelerisque. Sed ipsum neque, vulputate porta diam
-                  eget, consequat blandit nulla. Integer volutpat velit vitae purus lacinia aliquam.
-                  Integer bibendum ipsum vitae magna pulvinar, nec vehicula dolor vulputate. Nulla
-                  eu massa id orci placerat finibus vel sit amet eros. Vestibulum quis consequat
-                  massa. Sed sagittis sollicitudin massa at commodo. Praesent diam nisi, imperdiet
-                  posuere eleifend nec, blandit ac massa.
+                  As technology advances, continuous research into security in every field is very important.
+                  In our laboratory, we are focusing on hardware security and artificial intelligence, and studying various research topics based on this.
+                  Our lab aims to continue to study scalable solutions.
                 </p>
-                <p>
-                  Vestibulum semper pretium ipsum nec congue. Ut ac eros nisi. Donec leo sem,
-                  aliquam mollis sapien ultrices, dapibus congue diam. Proin viverra dapibus
-                  blandit. Ut mauris tellus, tristique id felis vel, venenatis vestibulum nunc. Nam
-                  molestie pulvinar nibh, eget egestas augue. Maecenas tellus arcu, mattis ut ipsum
-                  non, sollicitudin convallis nunc. Donec nec neque tristique, aliquet lacus id,
-                  laoreet nunc. Cras dapibus nisi nulla, ullamcorper faucibus neque suscipit ac.
-                  Donec eget orci venenatis justo lobortis volutpat. Proin vel placerat nisl.
-                  Integer arcu nunc, sodales eu fringilla non, aliquam non diam. Cras placerat,
-                  massa et faucibus pretium, ante elit tincidunt tellus, tristique ultricies velit
-                  quam et massa.
-                </p>
-                <p>
-                  In nunc lacus, dapibus vitae lacus sit amet, efficitur iaculis neque. Suspendisse
-                  ut tellus quis leo vestibulum tincidunt. Aenean nec enim ac dolor lacinia semper.
-                  Ut sed laoreet libero. Nunc elementum sollicitudin accumsan. Nunc eu augue neque.
-                  Proin a tortor nibh. Cras eu nisl ornare sapien feugiat pellentesque. Mauris
-                  dignissim vel quam eu pellentesque. Integer sit amet posuere quam, eu ullamcorper
-                  odio. Nullam a lacus tempus sapien dignissim ullamcorper. In hac habitasse platea
-                  dictumst. Proin quis massa aliquam, feugiat tortor sit amet, tincidunt urna. Donec
-                  posuere pulvinar lectus, ac semper ipsum vulputate quis.
-                </p>
+                <hr/>
+                <h3>
+                  Primary Research Topic
+                </h3>
+                <ol>
+                  <li>Hardware Security</li>
+                  <ul>
+                    <li>RowHammering</li>
+                    <li>description</li>
+                  </ul>
+                  <li>Model Pruning & Quantaization</li>
+                  <ul>
+                    <li>description</li>
+                  </ul>
+                  <li>AI Architecture for Hardware</li>
+                  <ul>
+                    <li>Adversial Attack</li>
+                    <li>description</li>
+                  </ul>
+                </ol>
+                <hr/>
+                <h3>
+                  Contact
+                </h3>
+                <ul>
+                  <li>Tel: (02)320-3012</li>
+                  <li>Email: konwoo@hongik.ac.kr</li>
+                  <li>Location: (04066) 94, Wausan-ro, Mapo-gu, Seoul, Republic of Korea<br />Engineering Hall IV(Building T) T0804</li>
+                </ul>
               </div>
             </PostFullContent>
           </article>

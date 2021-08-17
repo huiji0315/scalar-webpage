@@ -89,6 +89,28 @@ export const PostFullContent = styled.section`
     }
   }
 
+  ol > li {
+    font-size: 1.9rem;
+    font-weight: 550;
+    @media (max-width: 800px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  ol > ul {
+    font-size: 1.8rem;
+    @media (max-width: 800px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  ul > li {
+    font-size: 1.8rem;
+    @media (max-width: 800px) {
+      font-size: 1.7rem;
+    }
+  }
+  
   li {
     word-break: break-word;
   }
@@ -298,7 +320,7 @@ export const PostFullContent = styled.section`
 
   h3 {
     margin: 0.5em 0 0.2em;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     line-height: 1.3em;
     font-weight: 600;
   }
@@ -340,7 +362,7 @@ export const PostFullContent = styled.section`
     /* color: var(--blue); */
     color: ${colors.blue};
     font-family: Georgia, serif;
-    font-size: 3.2rem;
+    font-size: 3.3rem;
     line-height: 1.35em;
     text-align: center;
   }
