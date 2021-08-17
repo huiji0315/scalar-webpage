@@ -3,9 +3,9 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Casper',
-    description: 'A port of the casper blog built for gatsby',
-    siteUrl: 'https://gatsby-casper.netlify.com', // full path to blog - no ending slash
+    title: 'SCALAR LAB',
+    description: ' SCALable ARchitecture Lab. based on Computer Engeering Dept. of Hongik Univ. ',
+    siteUrl: 'https://huiji0315/github.io/sacalar-webpage', // full path to blog - no ending slash
   },
   plugins: [
     'gatsby-plugin-sitemap',
@@ -21,6 +21,13 @@ module.exports = {
       options: {
         name: 'content',
         path: path.join(__dirname, 'src', 'content'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'members',
+        path: path.join(__dirname, 'src', 'content', 'members'),
       },
     },
     {
@@ -50,7 +57,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://gatsby-casper.netlify.com',
+        siteUrl: 'https://huiji0315/github.io/sacalar-webpage',
       },
     },
     'gatsby-plugin-typescript',
@@ -58,57 +65,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return {
-                  ...edge.node.frontmatter,
-                  description: edge.node.excerpt,
-                  url: `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`,
-                  guid: `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                };
-              });
-            },
-            query: `
-              {
-                allMarkdownRemark {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml',
-            title: 'SCALAR Webpage',
-            match: '^/blog/',
-          },
-        ],
-      },
-    },
     {
       resolve: 'gatsby-plugin-postcss',
       options: {

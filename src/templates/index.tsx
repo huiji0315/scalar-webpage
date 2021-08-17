@@ -107,7 +107,7 @@ const IndexPage: React.FC<IndexProps> = props => {
                 );
               })} */}
               {/* <PostCard post={props.data.home.allMarkdownRemark.edges.node} large={props.data.home.allMarkdownRemark.edges.node.frontmatter.index === 0}/> */}
-              <Introduction fields={props.data.allMarkdownRemark.edges}/>
+              <Introduction fields={fields}/>
               <Divider/>
               <Field fields={fields}/>
             </div>

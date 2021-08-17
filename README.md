@@ -13,10 +13,12 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
   - [ ] PostContent
   - [x] Field
   - [x] Introduction
+  - [x] Profile
+  - [x] ProfileItem
 - [ ] pages
   - [x] 404
   - [x] about
-  - [ ] members
+  - [x] members
   - [ ] publications
 - [ ] templates
   - [x] field
