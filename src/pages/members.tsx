@@ -55,7 +55,7 @@ const FormerMembers = styled.div`
               Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
-const About: React.FC<MemberProps> = props => {
+const Member: React.FC<MemberProps> = props => {
   const profilelist = props.data.allMarkdownRemark.edges;
 
   return (
@@ -114,7 +114,7 @@ const About: React.FC<MemberProps> = props => {
   );
 };
 
-export default About;
+export default Member;
 
 export const memberQuery = graphql`
   query memberQuery {
@@ -141,11 +141,6 @@ export const memberQuery = graphql`
                 }
               }
             }
-          }
-          excerpt
-          fields {
-            layout
-            slug
           }
         }
       }
