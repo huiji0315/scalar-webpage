@@ -59,18 +59,18 @@ const About: React.FC = () => (
                 <h5>
                   SCALable ARchitecture Lab.
                 </h5>
-                <h3>
+                <h2>
                   Introduction
-                </h3>
+                </h2>
                 <p>
                   As technology advances, continuous research into security in every field is very important.
                   In our laboratory, we are focusing on hardware security and artificial intelligence, and studying various research topics based on this.
                   Our lab aims to continue to study scalable solutions.
                 </p>
                 <hr/>
-                <h3>
+                <h2>
                   Primary Research Topic
-                </h3>
+                </h2>
                 <ol>
                   <li>Hardware Security</li>
                   <ul>
@@ -88,9 +88,9 @@ const About: React.FC = () => (
                   </ul>
                 </ol>
                 <hr/>
-                <h3>
+                <h2>
                   Contact
-                </h3>
+                </h2>
                 <ul>
                   <li>Tel: (02)320-3012</li>
                   <li>Email: konwoo@hongik.ac.kr</li>

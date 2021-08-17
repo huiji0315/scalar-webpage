@@ -90,22 +90,18 @@ export const PostFullContent = styled.section`
   }
 
   ol > li {
-    font-size: 1.9rem;
     font-weight: 550;
-    @media (max-width: 800px) {
-      font-size: 1.8rem;
-    }
   }
 
   ol > ul {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     @media (max-width: 800px) {
       font-size: 1.7rem;
     }
   }
 
   ul > li {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     @media (max-width: 800px) {
       font-size: 1.7rem;
     }
@@ -313,7 +309,7 @@ export const PostFullContent = styled.section`
   @media (max-width: 800px) {
     h2 {
       margin-bottom: 0.3em;
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       line-height: 1.25em;
     }
   }

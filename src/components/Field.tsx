@@ -45,7 +45,7 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
   padding: 0 2rem;
-  margin: 4rem 1rem;
+  margin: 4rem 1rem 6rem;
   text-align: center;
 
   @media (max-width: 900px) {
