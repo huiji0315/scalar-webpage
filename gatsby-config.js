@@ -2,11 +2,11 @@
 const path = require('path');
 
 module.exports = {
-  pathPrefix: '/scalar-webpage',
+  pathPrefix: '/scalar-webpage/',
   siteMetadata: {
     title: 'SCALAR LAB',
     description: ' SCALable ARchitecture Lab. based on Computer Engeering Dept. of Hongik Univ. ',
-    siteUrl: 'https://huiji0315.github.io/scalar-webpage', // full path to blog - no ending slash
+    siteUrl: 'https://huiji0315.github.io/scalar-webpage/', // full path to blog - no ending slash
   },
   plugins: [
     'gatsby-plugin-sitemap',

@@ -124,7 +124,7 @@ export const pageQuery = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed(width: 2000, quality: 90) {
+        fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -133,7 +133,7 @@ export const pageQuery = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed(width: 1200, quality: 90) {
+        fixed(width: 1200, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -152,10 +152,10 @@ export const pageQuery = graphql`
             image {
               childImageSharp {
                 fluid(
-                  maxWidth: 4000
+                  maxWidth: 3080
                   maxHeight: 1000
                   fit: INSIDE
-                  quality: 90) {
+                  quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

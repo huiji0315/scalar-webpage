@@ -27,7 +27,7 @@ const config: WebsiteConfig = {
   coverImage: 'img/blog-cover.png',
   logo: 'img/hongik_logo.jpg',
   lang: 'en',
-  siteUrl: 'https://huiji0315.github.io/scalar-webpage',
+  siteUrl: 'https://huiji0315.github.io/scalar-webpage/',
   footer: 'is based on Hongik Univ.',
   contact: 'Contact : (02)320-3012',
   email: 'konwoo@hongik.ac.kr',
