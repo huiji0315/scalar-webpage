@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-casper",
-  "description": "Casper for gatsby",
+  "name": "scalar-webpage",
+  "description": "SCALable ARchitecture Lab. Webpage",
   "version": "0.0.0",
   "private": true,
-  "author": "Scott Cooper <scttcper@gmail.com>",
+  "author": "huiji0315 <huiji0315@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
