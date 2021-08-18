@@ -12,6 +12,7 @@
     "lint:fix": "eslint --fix --ext .js,.ts,.tsx .",
     "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "gatsby serve --prefix-paths -o",
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
