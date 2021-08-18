@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: 'SCALAR LAB',
     description: ' SCALable ARchitecture Lab. based on Computer Engeering Dept. of Hongik Univ. ',
-    siteUrl: 'https://huiji0315/github.io/scalar-webpage', // full path to blog - no ending slash
+    siteUrl: 'https://huiji0315.github.io/scalar-webpage', // full path to blog - no ending slash
   },
   plugins: [
     'gatsby-plugin-sitemap',
@@ -65,7 +65,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://huiji0315/github.io/scalar-webpage',
+        siteUrl: 'https://huiji0315.github.io/scalar-webpage',
       },
     },
     'gatsby-plugin-typescript',
