@@ -22,7 +22,7 @@ export interface WebsiteConfig {
 }
 
 const config: WebsiteConfig = {
-  title: 'SCALAR',
+  title: 'SCALAR LAB',
   description: 'SCALable ARchitecture Lab.',
   coverImage: 'img/blog-cover.png',
   logo: 'img/hongik_logo.jpg',

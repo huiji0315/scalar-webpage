@@ -7,6 +7,7 @@ export interface FieldType {
   node: {
     frontmatter: {
       title: string;
+      type: string;
       index: number;
       excerpt: string;
       image: {
@@ -16,7 +17,6 @@ export interface FieldType {
       };
     };
     fields: {
-      layout: string;
       slug: string;
     };
   };
@@ -60,9 +60,9 @@ const Field: React.FC<FieldProps> = ({ fields }) => {
       fields.filter(
         ({
           node: {
-            fields: { layout },
+            frontmatter: { type },
           },
-        }: FieldType) => layout.includes('field'),
+        }: FieldType) => type.includes('field'),
       ),
     [fields],
   );

@@ -124,12 +124,14 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
+      filter: { frontmatter: { type: { ne: null } } }
       sort: { fields: frontmatter___index, order: ASC }
     ) {
       edges {
         node {
           frontmatter {
             title
+            type
             index
             excerpt
             image {
@@ -145,7 +147,6 @@ export const pageQuery = graphql`
             }
           }
           fields {
-            layout
             slug
           }
         }

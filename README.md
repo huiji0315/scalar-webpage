@@ -6,27 +6,27 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
 
 ### Progress
 
-- [ ] component
+- [x] component
   - [x] header
   - [x] Footer
-  - [ ] PostCard
-  - [ ] PostContent
+  - [x] PostContent
   - [x] Field
+  - [x] FieldItem
   - [x] Introduction
   - [x] Profile
   - [x] ProfileItem
+  - [x] PublicationList
+  - [x] PublicationItem
 - [x] pages
   - [x] 404
   - [x] about
   - [x] members
   - [x] publications
-- [ ] templates
-  - [x] field
-  - [x] home
+- [x] templates
   - [x] index
-  - [ ] post
+  - [x] post
 - [x] content (image, md file)
-- [ ] website-config
+- [x] website-config
 - [ ] polish ✨
   - [ ] meta tags
   - [x] page titles

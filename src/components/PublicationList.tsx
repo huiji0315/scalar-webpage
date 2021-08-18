@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react';
-import styled from '@emotion/styled';
 import PublicationItem from './PublicationItem';
 
 export interface PublicationListType {

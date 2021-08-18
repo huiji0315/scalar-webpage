@@ -19,7 +19,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-item: center;
-  //padding: 2rem 3rem;
   margin: 0 2rem 0.5rem;
 `;
 
@@ -36,7 +35,6 @@ export const Information = styled.div`
 const Image = styled(Img)`
   width: 100px;
   height: 140px;
-  //border-radius: 10px;
 
   @media (max-width: 450px) {
     display: none;

@@ -26,9 +26,9 @@ const Introduction: React.FC<FieldProps> = ({ fields }) => {
       fields.filter(
         ({
           node: {
-            fields: { layout },
+            frontmatter: { type },
           },
-        }: FieldType) => layout.includes('home'),
+        }: FieldType) => type.includes('home'),
       ),
     [fields],
   );

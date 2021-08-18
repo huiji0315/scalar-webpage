@@ -1,5 +1,5 @@
 ---
-layout: field
+type: field
 index: 2
 title: 'Model Pruning & Quantaization'
 image: img/coding.jpg

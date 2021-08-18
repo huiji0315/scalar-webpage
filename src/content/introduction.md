@@ -1,5 +1,5 @@
 ---
-layout: home
+type: home
 index: 0
 title: SCALAR LAB.
 image: img/introduction.jpg

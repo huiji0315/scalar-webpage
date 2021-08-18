@@ -1,5 +1,5 @@
 ---
-layout: field
+type: field
 index: 1
 title: 'Hardware Security'
 image: img/RAM.jpg

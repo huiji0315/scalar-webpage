@@ -55,24 +55,30 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: { frontmatter: { type: { ne: null } } }
+      sort: { fields: frontmatter___index, order: ASC }
+    ) {
       edges {
         node {
           frontmatter {
             title
+            type
             index
             excerpt
             image {
               childImageSharp {
-                fluid(maxWidth: 3720) {
+                fluid(
+                  maxWidth: 3080
+                  maxHeight: 300
+                  fit: INSIDE
+                  quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
           }
-          excerpt
           fields {
-            layout
             slug
           }
         }

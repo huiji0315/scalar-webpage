@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
-import styled from '@emotion/styled';
 import ProfileItem from './ProfileItem';
-import Img, { FluidObject } from 'gatsby-image';
+import { FluidObject } from 'gatsby-image';
 
 export interface ProfileType {
   node: {

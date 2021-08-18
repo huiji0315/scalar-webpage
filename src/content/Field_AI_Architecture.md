@@ -1,5 +1,5 @@
 ---
-layout: field
+type: field
 index: 3
 title: 'AI Architecture for Hardware'
 image: img/typing.jpg
