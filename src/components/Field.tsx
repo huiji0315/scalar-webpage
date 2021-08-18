@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
-// import PropTypes from 'prop-types';
-import Item from './Item';
+import FieldItem from './FieldItem';
 import styled from '@emotion/styled';
-import Img, { FluidObject } from 'gatsby-image';
+import { FluidObject } from 'gatsby-image';
 
 export interface FieldType {
   node: {
@@ -79,7 +78,7 @@ const Field: React.FC<FieldProps> = ({ fields }) => {
               fields: { slug },
             },
           }: FieldType) => (
-            <Item key={slug} title={title} image={image} excerpt={excerpt} />
+            <FieldItem key={slug} title={title} image={image} excerpt={excerpt} />
           ),
         )}
       </Container>

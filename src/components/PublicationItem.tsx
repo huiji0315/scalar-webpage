@@ -13,7 +13,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-item: center;
-  //padding: 2rem 3rem;
   margin: 0 2rem 0.5rem;
 `;
 
@@ -37,7 +36,7 @@ const Publication: React.FC<PublicationItemProps> = ({ title, author, date, inst
         <SubInformation>
           {author}
         </SubInformation>
-        <a href={url}>
+        <a href={url} target="_blank" rel="noopener noreferrer">
           {title}
         </a>
         <SubInformation>

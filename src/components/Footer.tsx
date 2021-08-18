@@ -60,8 +60,9 @@ const SiteFooterContent = css`
     color: rgba(255, 255, 255, 1);
     text-decoration: none;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 700px) {
     flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -88,7 +89,8 @@ const SiteFooterNav = styled.nav`
   a:first-of-type:before {
     display: none;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 700px) {
+    justify-content: center;
     a:first-of-type {
       margin-left: 0;
     }
@@ -100,7 +102,7 @@ const SiteFooterContact = styled.nav`
   position: relative;
   justify-content: flex-end;
 
-  @media (max-width: 650px) {
+  @media (max-width: 700px) {
     justify-content: center;
   }
 `;

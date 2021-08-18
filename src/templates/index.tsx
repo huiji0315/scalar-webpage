@@ -1,21 +1,17 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { FixedObject } from 'gatsby-image';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-
-import { css } from '@emotion/react';
 import Divider from '@material-ui/core/Divider';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
-import { PostCard } from '../components/PostCard';
 import Field, { FieldType } from '../components/Field';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
   inner,
   outer,
-  PostFeed,
   Posts,
   SiteDescription,
   SiteHeader,
@@ -25,7 +21,6 @@ import {
   SiteHeaderStyles,
 } from '../styles/shared';
 import config from '../website-config';
-import { PageContext } from './post';
 import Introduction from '../components/Introduction';
 
 export interface IndexProps {
@@ -48,11 +43,10 @@ export interface IndexProps {
 
 const IndexPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
-  // const post = props.data.home.allMarkdownRemark.edges.node;
   const fields = props.data.allMarkdownRemark.edges;
 
   return (
-    <IndexLayout css={HomePosts}>
+    <IndexLayout>
       <Helmet>
         <html lang={config.lang} />
         <title>{config.title}</title>
@@ -98,22 +92,11 @@ const IndexPage: React.FC<IndexProps> = props => {
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
-            {/* </div>/<div css={[PostFeed]}> */}
-            <div>
-              {/* {props.data.allMarkdownRemark.edges.map((item, index) => {
-                return (
-                  // <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                  <Field key={item.node.fields.slug || index} items={item.node} />
-                );
-              })} */}
-              {/* <PostCard post={props.data.home.allMarkdownRemark.edges.node} large={props.data.home.allMarkdownRemark.edges.node.frontmatter.index === 0}/> */}
-              <Introduction fields={fields}/>
-              <Divider/>
-              <Field fields={fields}/>
-            </div>
+            <Introduction fields={fields}/>
+            <Divider/>
+            <Field fields={fields}/>
           </div>
         </main>
-        {props.children}
         <Footer />
       </Wrapper>
     </IndexLayout>
@@ -121,7 +104,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 };
 
 export const pageQuery = graphql`
-  query webPageQuery($skip: Int!, $limit: Int!) {
+  query webPageQuery {
     logo: file(relativePath: { eq: "img/hongik_logo.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
@@ -141,8 +124,6 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: $limit
-      skip: $skip
       sort: { fields: frontmatter___index, order: ASC }
     ) {
       edges {
@@ -163,71 +144,12 @@ export const pageQuery = graphql`
               }
             }
           }
-          excerpt
           fields {
             layout
             slug
           }
         }
       }
-    }
-  }
-`;
-
-const HomePosts = css`
-  @media (min-width: 795px) {
-    .post-card-large {
-      flex: 1 1 100%;
-      flex-direction: row;
-      padding-bottom: 40px;
-      min-height: 280px;
-      border-top: 0;
-    }
-
-    .post-card-large .post-card-title {
-      margin-top: 0;
-      font-size: 3.2rem;
-    }
-
-    .post-card-large:not(.no-image) .post-card-header {
-      margin-top: 0;
-    }
-
-    .post-card-large .post-card-image-link {
-      position: relative;
-      flex: 1 1 auto;
-      margin-bottom: 0;
-      min-height: 380px;
-    }
-
-    .post-card-large .post-card-image {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    .post-card-large .post-card-content {
-      flex: 0 1 361px;
-      justify-content: center;
-    }
-
-    .post-card-large .post-card-title {
-      margin-top: 0;
-      font-size: 3.2rem;
-    }
-
-    .post-card-large .post-card-content-link {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-meta {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-excerpt p {
-      margin-bottom: 1.5em;
-      font-size: 1.8rem;
-      line-height: 1.5em;
     }
   }
 `;

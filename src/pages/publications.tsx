@@ -156,11 +156,6 @@ export const publicationQuery = graphql`
             institution
             url
           }
-          excerpt
-          fields {
-            layout
-            slug
-          }
         }
       }
     }

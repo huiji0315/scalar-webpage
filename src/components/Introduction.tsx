@@ -2,12 +2,10 @@ import { Link } from 'gatsby';
 import _ from 'lodash';
 import { lighten } from 'polished';
 import React, { useMemo } from 'react';
-// import PropTypes from 'prop-types';
-import Item from '../components/Item';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Img, { FluidObject } from 'gatsby-image';
-import Field, { FieldType } from './Field';
+import Img from 'gatsby-image';
+import { FieldType } from './Field';
 import { colors } from '../styles/colors';
 import { PostFeed } from '../styles/shared';
 import { RiArrowRightSLine } from 'react-icons/ri';
@@ -17,10 +15,7 @@ interface FieldProps{
 }
 
 export const Container = styled.div`
-    display: flex;
-  //display: grid;
-  //grid-template-columns: repeat(3, 1fr);
-  //grid-gap: 4rem;
+  display: flex;
   padding: 0 4rem;
   margin: 4rem 0;
 `;
