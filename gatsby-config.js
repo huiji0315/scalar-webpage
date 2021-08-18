@@ -2,7 +2,7 @@
 const path = require('path');
 
 module.exports = {
-  pathPrefix: '/scalar-webpage/',
+  pathPrefix: '/scalar-webpage',
   siteMetadata: {
     title: 'SCALAR LAB',
     description: ' SCALable ARchitecture Lab. based on Computer Engeering Dept. of Hongik Univ. ',
