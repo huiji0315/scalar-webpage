@@ -30,6 +30,7 @@
     "gatsby-plugin-global-styles": "^1.0.17",
     "gatsby-plugin-postcss": "4.3.0",
     "gatsby-plugin-react-helmet": "4.3.0",
+    "gatsby-plugin-robots-txt": "^1.6.9",
     "gatsby-plugin-sharp": "3.3.0",
     "gatsby-plugin-sitemap": "3.3.0",
     "gatsby-plugin-typescript": "3.3.0",
