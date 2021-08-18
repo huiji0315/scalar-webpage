@@ -72,7 +72,7 @@ export const pageQuery = graphql`
                   maxWidth: 4000
                   maxHeight: 1000
                   fit: INSIDE
-                  quality: 100) {
+                  quality: 90) {
                   ...GatsbyImageSharpFluid
                 }
               }

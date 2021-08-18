@@ -136,7 +136,7 @@ export const memberQuery = graphql`
                   maxWidth: 3000
                   maxHeight: 1000
                   fit: INSIDE
-                  quality: 100) {
+                  quality: 90) {
                   ...GatsbyImageSharpFluid
                 }
               }
