@@ -64,7 +64,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:url" content={config.siteUrl} />
         <meta
           property="og:image"
-          content={`https://huiji0315/github.io/scalar-webpage${props.data.gate.childImageSharp.fixed.src}`}
+          content={`https://huiji0315.github.io/scalar-webpage${props.data.gate.childImageSharp.fixed.src}`}
         />
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
@@ -133,7 +133,7 @@ export const pageQuery = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed(width: 1200, quality: 100) {
+        fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -152,8 +152,8 @@ export const pageQuery = graphql`
             image {
               childImageSharp {
                 fluid(
-                  maxWidth: 2000
-                  maxHeight: 1000
+                  maxWidth: 3080
+                  maxHeight: 300
                   fit: INSIDE
                   quality: 100) {
                   ...GatsbyImageSharpFluid

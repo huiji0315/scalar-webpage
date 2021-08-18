@@ -133,7 +133,7 @@ export const memberQuery = graphql`
             image {
               childImageSharp {
                 fluid(
-                  maxWidth: 200
+                  maxWidth: 3080
                   maxHeight: 300
                   fit: INSIDE
                   quality: 100) {
