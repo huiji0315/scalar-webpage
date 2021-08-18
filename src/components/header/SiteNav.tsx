@@ -24,16 +24,16 @@ class SiteNav extends React.Component<SiteNavProps> {
           <SiteNavContent>
             <ul css={NavStyles} role="menu">
               <li role="menuitem">
-                <Link to="/" activeClassName="nav-current">Home</Link>
+                <Link to="/scalar-webpage" activeClassName="nav-current">Home</Link>
               </li>
               <li role="menuitem">
-                <Link to="/about" activeClassName="nav-current">About</Link>
+                <Link to="/scalar-webpage/about" activeClassName="nav-current">About</Link>
               </li>
               <li role="menuitem">
-                <Link to="/members" activeClassName="nav-current">Members</Link>
+                <Link to="/scalar-webpage/members" activeClassName="nav-current">Members</Link>
               </li>
               <li role="menuitem">
-                <Link to="/publications" activeClassName="nav-current">Publications</Link>
+                <Link to="/scalar-webpage/publications" activeClassName="nav-current">Publications</Link>
               </li>
             </ul>
           </SiteNavContent>
