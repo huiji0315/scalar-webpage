@@ -47,7 +47,7 @@ export interface IndexProps {
 }
 
 const IndexPage: React.FC<IndexProps> = props => {
-  const { width, height } = props.data.header.childImageSharp.fixed;
+  const { width, height } = props.data.gate.childImageSharp.fixed;
   const fields = props.data.allMarkdownRemark.edges;
 
   return (
