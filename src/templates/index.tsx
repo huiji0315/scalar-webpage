@@ -35,6 +35,11 @@ export interface IndexProps {
         fixed: FixedObject;
       };
     };
+    gate: {
+      childImageSharp: {
+        fixed: FixedObject;
+      };
+    };
     allMarkdownRemark: {
       edges: FieldType[];
     };
@@ -59,7 +64,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:url" content={config.siteUrl} />
         <meta
           property="og:image"
-          content={`${config.siteUrl}${props.data.logo.childImageSharp.fixed.src}`}
+          content={`${config.siteUrl}${props.data.gate.childImageSharp.fixed.src}`}
         />
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
@@ -116,6 +121,15 @@ export const pageQuery = graphql`
       }
     }
     header: file(relativePath: { eq: "img/blog-cover.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    gate: file(relativePath: { eq: "img/gate-photo.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
