@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://huiji0315/scalar-webpage/sitemap/sitemap-index.xml
-Host: https://huiji0315
+Sitemap: https://huiji0315.github.io/scalar-webpage/sitemap/sitemap-index.xml
+Host: https://huiji0315.github.io
