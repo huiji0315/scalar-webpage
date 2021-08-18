@@ -12,7 +12,6 @@ export interface WebsiteConfig {
    * blog full path, no ending slash!
    */
   siteUrl: string;
-  ogUrl: string;
   /**
    * full url, no username
    */
@@ -29,7 +28,6 @@ const config: WebsiteConfig = {
   logo: 'img/hongik_logo.jpg',
   lang: 'en',
   siteUrl: 'https://huiji0315.github.io/scalar-webpage',
-  ogUrl: 'https://huiji0315.github.io',
   footer: 'is based on Hongik Univ.',
   contact: 'Contact : (02)320-3012',
   email: 'konwoo@hongik.ac.kr',
