@@ -76,6 +76,7 @@ const PageTemplate = ({ data, location }: PageTemplateProps) => {
         <title>{post.frontmatter.title}</title>
 
         <meta name="description" content={post.frontmatter.excerpt || post.excerpt} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={post.frontmatter.title} />

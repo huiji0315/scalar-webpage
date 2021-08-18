@@ -27,8 +27,8 @@ This is a static webpage generator and starter gatsby repo. A port of [Casper](h
   - [x] post
 - [x] content (image, md file)
 - [x] website-config
-- [ ] polish ✨
-  - [ ] meta tags
+- [x] polish ✨
+  - [x] meta tags
   - [x] page titles
 
 ## How to edit your site title and description
