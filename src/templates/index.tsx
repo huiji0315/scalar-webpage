@@ -64,7 +64,7 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:url" content={config.siteUrl} />
         <meta
           property="og:image"
-          content={`${config.siteUrl}${props.data.gate.childImageSharp.fixed.src}`}
+          content={`https://huiji0315.github.io/scalar-webpage${props.data.gate.childImageSharp.fixed.src}`}
         />
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
