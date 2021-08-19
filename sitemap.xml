@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/Field_AI_Architecture/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/introduction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/Field_Hardware/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/Field_Model_Pruning/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Dongsoo-Lee/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Dahoon-Park/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/Field_Hardware/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/introduction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Huiji-Jang/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Hyowon-Kim/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Konwoo-Kwon/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Myeongho-Kim/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Hyowon-Kim/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Seyeon-Park/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/Shinhee-No/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/publications/ACCESS-3059843/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/publications/Electronics-10-00792/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/publications/IKEEE-202125125/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/publications/ACCESS-3059843/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/publications/IEICE-18-20200378/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/publications/IKEEE-202125125/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/members/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://huiji0315.github.io/scalar-webpage/scalar-webpage/publications/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
