@@ -19,7 +19,7 @@ export const SiteNavLogo = () => (
       query HeadingQuery {
         logo: file(relativePath: { eq: "img/hongik_logo.jpg" }) {
           childImageSharp {
-            fixed(quality: 100 width: 500) {
+            fixed(quality: 90 width: 500) {
               ...GatsbyImageSharpFixed
             }
           }
