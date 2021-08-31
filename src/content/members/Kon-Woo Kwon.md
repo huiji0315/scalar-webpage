@@ -1,7 +1,7 @@
 ---
-name: Konwoo-Kwon
+name: Kon-Woo Kwon
 course: professor
 email: konwoo@hongik.ac.kr
 field: AI, Security, Memory, ECC
-image: ./Konwoo-Kwon.jpg
+image: ./Kon-Woo Kwon.jpg
 ---

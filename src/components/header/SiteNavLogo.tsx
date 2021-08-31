@@ -62,8 +62,4 @@ const SiteNavLogoStyles = css`
     width: auto;
     height: 21px;
   }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
 `;

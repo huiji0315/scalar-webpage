@@ -21,11 +21,11 @@ class SiteNav extends React.Component<SiteNavProps> {
       <nav css={SiteNavStyles}>
         <SiteNavLeft>
           {!isHome && <SiteNavLogo />}
+        </SiteNavLeft>
+        <SiteNavRight>
+          {/* {!isHome && <SiteNavLogo />} */}
           <SiteNavContent>
             <ul css={NavStyles} role="menu">
-              <li role="menuitem">
-                <Link to="/" activeClassName="nav-current">Home</Link>
-              </li>
               <li role="menuitem">
                 <Link to="/about" activeClassName="nav-current">About</Link>
               </li>
@@ -37,7 +37,7 @@ class SiteNav extends React.Component<SiteNavProps> {
               </li>
             </ul>
           </SiteNavContent>
-        </SiteNavLeft>
+        </SiteNavRight>
       </nav>
     );
   }
@@ -64,26 +64,34 @@ const SiteNavStyles = css`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  overflow-y: hidden;
+  //overflow-y: hidden;
   height: 64px;
   font-size: 1.4rem;
 `;
 
 const SiteNavLeft = styled.div`
-  flex: 1 0 auto;
+  //flex: 1 0 auto;
   display: flex;
   align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  margin-right: 10px;
-  padding: 10px 0 80px;
+  margin-left: 10px;
+  padding: 10px 0;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  //white-space: nowrap;
+`;
+
+const SiteNavRight = styled.div`
+  //flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  //margin-right: 10px;
+  padding: 10px 0;
   font-weight: 500;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   white-space: nowrap;
-
-  -ms-overflow-scrolling: touch;
 
   @media (max-width: 700px) {
     margin-right: 0;
@@ -97,7 +105,7 @@ const SiteNavContent = styled.div`
 `;
 
 const NavStyles = css`
-  position: absolute;
+  //position: absolute;
   z-index: 1000;
   display: flex;
   margin: 0 0 0 -12px;

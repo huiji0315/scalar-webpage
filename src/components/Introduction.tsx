@@ -40,7 +40,7 @@ const Introduction: React.FC<FieldProps> = ({ fields }) => {
         css={[PostCardStyles, PostCardLarge]}
       >
         {field[0].node.frontmatter.image && (
-          <Link className="post-card-image-link" css={PostCardImageLink} to="/about">
+          <div className="post-card-image-link" css={PostCardImageLink}>
             <PostCardImage className="post-card-image">
               {field[0].node.frontmatter?.image?.childImageSharp?.fluid && (
                 <Img
@@ -50,17 +50,17 @@ const Introduction: React.FC<FieldProps> = ({ fields }) => {
                 />
               )}
             </PostCardImage>
-          </Link>
+          </div>
         )}
         <PostCardContent className="post-card-content">
-          <Link className="post-card-content-link" css={PostCardContentLink} to="/about">
+          <div className="post-card-content-link" css={PostCardContentLink}>
             <PostCardHeader className="post-card-header">
               <PostCardTitle className="post-card-title">{field[0].node.frontmatter.title}</PostCardTitle>
             </PostCardHeader>
             <PostCardExcerpt className="post-card-excerpt">
               <p>{field[0].node.frontmatter.excerpt}</p>
             </PostCardExcerpt>
-          </Link>
+          </div>
           <Link
             to="/about"
             className="post-card-button"
@@ -188,7 +188,8 @@ const PostCardTitle = styled.h2`
 `;
 
 const PostCardExcerpt = styled.section`
-  font-family: Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+              Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
   @media (prefers-color-scheme: dark) {
     /* color: color(var(--midgrey) l(+10%)); */

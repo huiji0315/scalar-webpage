@@ -26,6 +26,12 @@ const PageTemplate = css`
     background: #fff;
   }
 
+  .post-full-title {
+    text-decoration : underline #e0e2e4;
+    text-underline-position: under;
+    text-decoration-thickness: 0.07em;
+  }
+
   @media (prefers-color-scheme: dark) {
     .site-main {
       /* background: var(--darkmode); */
